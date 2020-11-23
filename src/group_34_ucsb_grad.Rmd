@@ -11,3 +11,9 @@ library(tidyverse)
 library(here)
 ```
 
+# Add a new code chunk, and read in the ucsb_grad_data.csv data as an object called ucsb_grad using a relative file path (with here) pointing to the file in the data folder within the project
+
+```{r}
+ucsb_grad<- here("data","ucsb_grad_data.csv")
+```
+
