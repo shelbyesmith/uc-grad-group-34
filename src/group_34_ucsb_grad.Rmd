@@ -1,6 +1,6 @@
 ---
 title: "Group 34 UCSB domestic grad enrollment"
-author: "Shelby Smith"
+author: "Shelby Smith, Andrea Gracia"
 date: "11/23/2020"
 output: html_document
 ---
@@ -14,6 +14,11 @@ library(here)
 # Add a new code chunk, and read in the ucsb_grad_data.csv data as an object called ucsb_grad using a relative file path (with here) pointing to the file in the data folder within the project
 
 ```{r}
-ucsb_grad<- here("data","ucsb_grad_data.csv")
+ucsb_grad<- read_csv(here("data", "ucsb_grad_data.csv"))
 ```
 
+# Create a basic column graph showing the change in domestic graduate enrollment from 2008 - 2019  
+```{r}
+ggplot(data=ucsb_grad,aes(x=year_abbr))+
+  geom_col(aes(y=domestic_enrollment, fill=ethnicity))
+```
