@@ -20,5 +20,7 @@ ucsb_grad<- read_csv(here("data", "ucsb_grad_data.csv"))
 # Create a basic column graph showing the change in domestic graduate enrollment from 2008 - 2019  
 ```{r}
 ggplot(data=ucsb_grad,aes(x=year_abbr))+
-  geom_col(aes(y=domestic_enrollment, fill=ethnicity))
+  geom_col(aes(y=domestic_enrollment, fill=ethnicity), position="fill")+
+  labs(x="Year",
+       y="Percent Domestic Enrollment")
 ```
